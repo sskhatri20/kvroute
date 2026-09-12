@@ -1,0 +1,23 @@
+[project]
+name = "kvroute"
+version = "0.1.0"
+description = ""
+authors = [
+    { name = "sskhatri20", email = "sskhatri20@gmail.com" }
+]
+readme = "README.md"
+requires-python = "^3.13"
+dependencies = [
+    "fastapi (>=0.141.1,<0.142.0)",
+    "uvicorn (>=0.52.4,<0.53.0)",
+    "httpx (>=0.28.1,<0.29.0)",
+    "prometheus-client (>=0.26.0,<0.27.0)",
+    "vllm"
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
