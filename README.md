@@ -10,7 +10,13 @@ code. Step 6 (a real vLLM backend) has also been run end-to-end on a GPU pod
 — see [Running against real vLLM](#running-against-real-vllm-gpu) and the
 captured results in `bench/results/`.
 
-![Grafana dashboard: TTFT percentiles, ITL, per-backend throughput, and inflight depth from a real vLLM run](bench/results/grafana-dashboard.png)
+| TTFT p50/p95/p99 | ITL p50 |
+|---|---|
+| ![TTFT percentiles](bench/results/grafana-ttft.png) | ![ITL p50](bench/results/grafana-itl.png) |
+
+| Throughput per backend | Inflight per backend |
+|---|---|
+| ![Throughput requests/s](bench/results/grafana-throughput.png) | ![Inflight per backend](bench/results/grafana-inflight.png) |
 
 | Step | What | File |
 |---|---|---|

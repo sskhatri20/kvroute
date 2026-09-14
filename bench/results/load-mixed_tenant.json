@@ -1,236 +1,80 @@
 {
   "summary": {
     "profile": "mixed_tenant",
-    "rate": 20.0,
-    "duration": 45.0,
-    "sent": 877,
-    "admitted": 187,
-    "shed": 690,
-    "ttft_p50": 0.9483313750242814,
-    "ttft_p95": 3.287817458040081
+    "rate": 10.0,
+    "duration": 30.0,
+    "sent": 297,
+    "admitted": 161,
+    "shed": 136,
+    "ttft_p50": 0.7840112920384854,
+    "ttft_p95": 1.8038112500216812
   },
   "raw": [
     {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.063558666035533,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
       "shed": false,
-      "ttft": 0.45178233296610415,
+      "ttft": 0.485111957998015,
       "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
     },
     {
       "shed": true
     },
     {
       "shed": false,
-      "ttft": 0.7518118340522051,
-      "itl_mean": 0.011516897791979026
-    },
-    {
-      "shed": false,
-      "ttft": 0.3494255830300972,
+      "ttft": 0.8178249160991982,
       "itl_mean": null
-    },
-    {
-      "shed": true
     },
     {
       "shed": false,
-      "ttft": 0.24586466699838638,
-      "itl_mean": 0.02416252378108246
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
+      "ttft": 0.6145782079547644,
+      "itl_mean": 0.015803915471769868
     },
     {
       "shed": false,
-      "ttft": 0.5344383750343695,
+      "ttft": 1.3222942909924313,
       "itl_mean": null
     },
     {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
       "shed": false,
-      "ttft": 0.9863981250673532,
+      "ttft": 0.708254583994858,
       "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
     },
     {
-      "shed": true
-    },
-    {
       "shed": false,
-      "ttft": 0.8026665420038626,
-      "itl_mean": 0.01421469186278691
+      "ttft": 0.514462333987467,
+      "itl_mean": 0.019529309091680894
     },
     {
       "shed": false,
-      "ttft": 0.9486223750282079,
+      "ttft": 1.5211765839485452,
       "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.434512332896702,
+      "itl_mean": 0.01961559779604669
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.637184957973659,
+      "itl_mean": 0.01700063754388502
     },
     {
       "shed": false,
-      "ttft": 0.7857098749373108,
+      "ttft": 0.7869311670074239,
       "itl_mean": null
     },
     {
       "shed": false,
-      "ttft": 0.38219337491318583,
-      "itl_mean": 0.013693468223104802
+      "ttft": 0.7174215000122786,
+      "itl_mean": 0.016354485385307812
     },
     {
       "shed": false,
-      "ttft": 0.5431420829845592,
-      "itl_mean": 0.01445757656256319
+      "ttft": 1.6588002919452265,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -255,132 +99,48 @@
     },
     {
       "shed": false,
-      "ttft": 1.2720814999192953,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
+      "ttft": 0.6234617090085521,
+      "itl_mean": 0.01876372026895004
     },
     {
       "shed": false,
-      "ttft": 0.6969234170392156,
+      "ttft": 0.9978353749029338,
       "itl_mean": null
     },
     {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
       "shed": false,
-      "ttft": 1.1460437079658732,
-      "itl_mean": 0.011153901899174515
+      "ttft": 1.4210617499193177,
+      "itl_mean": 0.014824038519708545
     },
     {
       "shed": false,
-      "ttft": 0.7682962499093264,
+      "ttft": 1.7412824579514563,
       "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
     },
     {
       "shed": false,
-      "ttft": 0.3299607499502599,
-      "itl_mean": null
-    },
-    {
-      "shed": true
+      "ttft": 0.8960698749870062,
+      "itl_mean": 0.01744646249959866
     },
     {
       "shed": false,
-      "ttft": 0.7792068329872563,
-      "itl_mean": null
+      "ttft": 1.6588782500475645,
+      "itl_mean": 0.01636143855520082
     },
     {
       "shed": false,
-      "ttft": 0.8496431250823662,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
+      "ttft": 0.6689225839218125,
+      "itl_mean": 0.015568435519892078
     },
     {
       "shed": false,
-      "ttft": 0.5961398329818621,
+      "ttft": 0.8257231250172481,
       "itl_mean": null
     },
     {
       "shed": false,
-      "ttft": 1.2096395411062986,
-      "itl_mean": 0.01380613095141829
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
+      "ttft": 1.5259857090422884,
+      "itl_mean": 0.0156953082058702
     },
     {
       "shed": true
@@ -393,1794 +153,34 @@
     },
     {
       "shed": false,
-      "ttft": 0.7497885830234736,
-      "itl_mean": 0.01198590174220347
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
+      "ttft": 0.8720514579908922,
+      "itl_mean": null
     },
     {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.37490991596132517,
-      "itl_mean": 0.011602814145794327
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.560335332993418,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.3955218750052154,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.4467281249817461,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.44239566603209823,
-      "itl_mean": 0.01189721777336672
-    },
-    {
-      "shed": false,
-      "ttft": 0.4901096250396222,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.18137533299159259,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.5137338750064373,
-      "itl_mean": 0.013577871013445498
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.3682450420456007,
-      "itl_mean": 0.01342999660491207
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.6152293339837343,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.37588991702068597,
-      "itl_mean": 0.013588341200051621
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.2274103749077767,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.46778366703074425,
-      "itl_mean": 2.5605588309364776e-05
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.5930327500682324,
-      "itl_mean": 0.01598438466109136
-    },
-    {
-      "shed": false,
-      "ttft": 0.7219690419733524,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.5165825419826433,
-      "itl_mean": 0.009946663714280086
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.7535287910141051,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.31330962502397597,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.19988741702400148,
-      "itl_mean": 1.8664014836152393e-05
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.6028414580505341,
-      "itl_mean": 0.01377805298872535
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.6905984999611974,
-      "itl_mean": 0.01305532743378232
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.33965241606347263,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.41215437499340624,
-      "itl_mean": 0.00904241664102301
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.37494029104709625,
-      "itl_mean": 0.013676763907300703
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.22757108393125236,
-      "itl_mean": 0.01241464015082315
-    },
-    {
-      "shed": false,
-      "ttft": 0.3361634999746457,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.2138540829764679,
-      "itl_mean": 0.013575408613591008
-    },
-    {
-      "shed": false,
-      "ttft": 0.5287999999709427,
-      "itl_mean": 0.01298800648138341
-    },
-    {
-      "shed": false,
-      "ttft": 0.20740775007288903,
-      "itl_mean": 0.013569628571470578
-    },
-    {
-      "shed": false,
-      "ttft": 0.15844983293209225,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.4444802080979571,
-      "itl_mean": 0.013763308012268589
-    },
-    {
-      "shed": false,
-      "ttft": 0.188604166964069,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.1637515421025455,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.37202720809727907,
-      "itl_mean": 0.013661468141328762
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.25247941608540714,
-      "itl_mean": 0.013908913134107902
-    },
-    {
-      "shed": false,
-      "ttft": 0.3683229589369148,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.34307125001214445,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.3304016249021515,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.37029612506739795,
-      "itl_mean": 0.013642340026438302
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.3760318330023438,
-      "itl_mean": 0.013626634909354568
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.37965037499088794,
-      "itl_mean": 0.013469960000365972
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.5416860840050504,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.16395004198420793,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.1734590829582885,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.5162412920035422,
-      "itl_mean": 0.013049938123334538
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.6278026250656694,
-      "itl_mean": 0.013118481999378146
-    },
-    {
-      "shed": false,
-      "ttft": 0.5744196670129895,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.5187546249944717,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.25493933307006955,
-      "itl_mean": 0.013850868778611691
-    },
-    {
-      "shed": false,
-      "ttft": 0.3699714170070365,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.35281874996144325,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.5384877079632133,
-      "itl_mean": 0.013494855731785778
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.49896574998274446,
-      "itl_mean": 0.014666432949632187
-    },
-    {
-      "shed": false,
-      "ttft": 0.6730477090459317,
-      "itl_mean": 0.016723730220554112
-    },
-    {
-      "shed": false,
-      "ttft": 0.29621941701043397,
-      "itl_mean": 0.014376667919615518
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.7816569169517606,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.8629430000437424,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.8415654170094058,
-      "itl_mean": 1.3235141523182392e-05
-    },
-    {
-      "shed": false,
-      "ttft": 0.6377957500517368,
-      "itl_mean": 0.01368624054585709
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.0375440419884399,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.6245608750032261,
-      "itl_mean": 0.013710545180281287
-    },
-    {
-      "shed": false,
-      "ttft": 0.6494543750304729,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.9883987499633804,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.8005939159775153,
-      "itl_mean": 0.012851103339344264
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.6638229580130428,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.7653078329749405,
-      "itl_mean": 0.013092108330978403
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.0034241250250489,
-      "itl_mean": 0.013978151240196355
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.35783645894844085,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.8545268750749528,
-      "itl_mean": 0.01372301331911312
-    },
-    {
-      "shed": false,
-      "ttft": 0.38555641600396484,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 1.009073332999833,
-      "itl_mean": 0.015453566761359318
-    },
-    {
-      "shed": false,
-      "ttft": 1.0066283750347793,
-      "itl_mean": 0.014366538078194997
-    },
-    {
-      "shed": false,
-      "ttft": 0.5651187499752268,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.3097230419516563,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.3625218339730054,
-      "itl_mean": 9.261934559361719e-06
-    },
-    {
-      "shed": false,
-      "ttft": 0.8718890419695526,
-      "itl_mean": 0.016032742525940426
-    },
-    {
-      "shed": false,
-      "ttft": 0.2708645830862224,
-      "itl_mean": 0.01726447751594057
-    },
-    {
-      "shed": false,
-      "ttft": 0.36779583303723484,
-      "itl_mean": 0.016052569443773892
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 2.043334084097296,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.7697398751042783,
-      "itl_mean": 0.016136884433803084
-    },
-    {
-      "shed": false,
-      "ttft": 1.599137166980654,
-      "itl_mean": 0.012396104789028565
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 2.1419806249905378,
-      "itl_mean": 0.009526106404825613
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 2.0463210000889376,
-      "itl_mean": 0.009280904801408236
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.8529338340740651,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.3243686659261584,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 1.4689444159157574,
-      "itl_mean": 0.01749730286192735
-    },
-    {
-      "shed": false,
-      "ttft": 0.8005121250171214,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 1.3106557079590857,
-      "itl_mean": 0.0154270983245959
-    },
-    {
-      "shed": false,
-      "ttft": 1.1816470419289544,
-      "itl_mean": 0.0070656438080233435
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.4253665829310194,
-      "itl_mean": 0.0015521005072907821
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.3029540409334004,
-      "itl_mean": 0.004272848218014198
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.0784899579593912,
-      "itl_mean": 0.009476850347412864
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.0356909170513973,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.015649790992029,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 0.9288642919855192,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.2728942499961704,
-      "itl_mean": 0.011880171728659083
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.1301690000109375,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.030755125102587,
-      "itl_mean": 0.013833456382599252
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.1568754160543904,
-      "itl_mean": 0.013255061731561673
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.2637637499719858,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.5418457080377266,
-      "itl_mean": 0.01168261035127216
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.4765113340690732,
-      "itl_mean": 0.010184080607614646
-    },
-    {
-      "shed": false,
-      "ttft": 1.7039349590195343,
-      "itl_mean": 0.009488077743387804
-    },
-    {
-      "shed": false,
-      "ttft": 0.9483313750242814,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.0329204170266166,
-      "itl_mean": 0.012256508640382649
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
       "shed": false,
-      "ttft": 0.965152750024572,
-      "itl_mean": 0.012734185402505389
-    },
-    {
-      "shed": false,
-      "ttft": 1.0223823330597952,
-      "itl_mean": null
-    },
-    {
-      "shed": false,
-      "ttft": 0.9476980420295149,
-      "itl_mean": 0.012538676335476338
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.2345725409686565,
-      "itl_mean": 1.6994795508005403e-05
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 1.2917232909239829,
-      "itl_mean": null
-    },
-    {
-      "shed": true
-    },
-    {
-      "shed": true
+      "ttft": 1.8362173750065267,
+      "itl_mean": 0.014170110687700799
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.9578685829183087,
+      "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.7493564169853926,
+      "itl_mean": 0.012326668875819418
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.9243805829901248,
+      "itl_mean": 0.012528179570966
     },
     {
       "shed": true
@@ -2198,15 +198,17 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.8271211250685155,
+      "itl_mean": 0.009828390495867029
     },
     {
       "shed": true
     },
     {
       "shed": false,
-      "ttft": 0.8749907090095803,
-      "itl_mean": 0.01523197869325734
+      "ttft": 1.4784594590310007,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2218,46 +220,56 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.6104508329881355,
+      "itl_mean": 1.4244949191131376e-05
     },
     {
       "shed": false,
-      "ttft": 0.9527343329973519,
+      "ttft": 1.0057435830822214,
       "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.7364387909183279,
+      "itl_mean": 0.01265609750058502
     },
     {
       "shed": false,
-      "ttft": 1.284989958978258,
-      "itl_mean": 0.01613614862183417
+      "ttft": 1.8824213340412825,
+      "itl_mean": 0.013050848476599309
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.1066633750451729,
+      "itl_mean": 0.0024204792155485067
     },
     {
       "shed": false,
-      "ttft": 0.9761154999723658,
-      "itl_mean": 0.01702353086094027
+      "ttft": 1.6372680420754477,
+      "itl_mean": 0.010397640291212385
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.6098115420900285,
+      "itl_mean": 0.012197480098441687
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.9392607500776649,
+      "itl_mean": null
     },
     {
       "shed": true
     },
     {
       "shed": false,
-      "ttft": 1.2750637079589069,
-      "itl_mean": 0.012457666668166039
+      "ttft": 0.8718292500125244,
+      "itl_mean": null
     },
     {
       "shed": false,
-      "ttft": 1.6224097079830244,
+      "ttft": 0.8190613329643384,
       "itl_mean": null
     },
     {
@@ -2267,10 +279,14 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.8375310830306262,
+      "itl_mean": 0.01741169485167655
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 2.1851107090478763,
+      "itl_mean": 0.011460026070445536
     },
     {
       "shed": true
@@ -2282,52 +298,60 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.5343166249804199,
+      "itl_mean": 0.012383136281035453
     },
     {
       "shed": true
     },
     {
       "shed": true
+    },
+    {
+      "shed": false,
+      "ttft": 0.3738724159775302,
+      "itl_mean": null
     },
     {
       "shed": false,
-      "ttft": 1.1799376660492271,
-      "itl_mean": 0.016193400669310774
+      "ttft": 1.2285544159822166,
+      "itl_mean": 0.009726354780415183
     },
     {
       "shed": true
     },
     {
       "shed": false,
-      "ttft": 1.7598055419512093,
-      "itl_mean": 1.4297572696315391e-05
+      "ttft": 0.7201657079858705,
+      "itl_mean": 0.011682385000167415
     },
     {
       "shed": true
     },
     {
-      "shed": false,
-      "ttft": 1.7100599999539554,
-      "itl_mean": 0.052096124996231605
+      "shed": true
     },
     {
       "shed": false,
-      "ttft": 2.008669542032294,
+      "ttft": 0.34536095801740885,
       "itl_mean": null
+    },
+    {
+      "shed": false,
+      "ttft": 0.33042674988973886,
+      "itl_mean": 0.01421542795206834
     },
     {
       "shed": true
     },
     {
-      "shed": false,
-      "ttft": 1.9555419170064852,
-      "itl_mean": null
+      "shed": true
     },
     {
       "shed": false,
-      "ttft": 1.6357318330556154,
-      "itl_mean": 0.01420795978249415
+      "ttft": 0.8335981670534238,
+      "itl_mean": 0.010342856212595447
     },
     {
       "shed": true
@@ -2339,6 +363,11 @@
       "shed": true
     },
     {
+      "shed": false,
+      "ttft": 0.2672364580212161,
+      "itl_mean": 0.015886141275543542
+    },
+    {
       "shed": true
     },
     {
@@ -2352,11 +381,31 @@
     },
     {
       "shed": true
+    },
+    {
+      "shed": false,
+      "ttft": 0.9138214170234278,
+      "itl_mean": null
+    },
+    {
+      "shed": false,
+      "ttft": 0.40900508291088045,
+      "itl_mean": 0.01346989672388287
+    },
+    {
+      "shed": false,
+      "ttft": 0.8619054580340162,
+      "itl_mean": 0.014195438513975337
+    },
+    {
+      "shed": false,
+      "ttft": 0.6760310831014067,
+      "itl_mean": 0.013695935605827606
     },
     {
       "shed": false,
-      "ttft": 2.423573874984868,
-      "itl_mean": 5.364795030396901e-06
+      "ttft": 0.7069304999895394,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2378,24 +427,28 @@
     },
     {
       "shed": false,
-      "ttft": 2.7008888750569895,
-      "itl_mean": null
+      "ttft": 0.6350139590213075,
+      "itl_mean": 0.014007722507004574
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.250553666963242,
+      "itl_mean": 0.01653469811448441
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.5494230840122327,
+      "itl_mean": 0.017409562500563032
     },
     {
       "shed": false,
-      "ttft": 1.6336788329062983,
-      "itl_mean": 0.019265823050761667
+      "ttft": 0.7846023750025779,
+      "itl_mean": 1.8604161382159765e-05
     },
     {
       "shed": false,
-      "ttft": 2.0203710419591516,
-      "itl_mean": 0.017611466897608032
+      "ttft": 1.0136503749527037,
+      "itl_mean": 0.0151279675925185
     },
     {
       "shed": true
@@ -2410,12 +463,12 @@
       "shed": true
     },
     {
-      "shed": false,
-      "ttft": 2.9999725830275565,
-      "itl_mean": null
+      "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.6411675419658422,
+      "itl_mean": 0.01437152083316404
     },
     {
       "shed": true
@@ -2427,25 +480,37 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.746284208027646,
+      "itl_mean": 0.015974562499928763
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.0007490419084206,
+      "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.800325124990195,
+      "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.8441497499588877,
+      "itl_mean": 0.012534019467638475
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.9006743340287358,
+      "itl_mean": 0.00745656690913055
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.5738996670115739,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2454,29 +519,39 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.0581500000553206,
+      "itl_mean": 0.012341044270821536
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.8463997909566388,
+      "itl_mean": 0.011090154784531998
     },
     {
       "shed": false,
-      "ttft": 3.4108371670590714,
-      "itl_mean": 0.0014296370979037978
+      "ttft": 0.9967852500267327,
+      "itl_mean": 0.011914665348049773
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.7424559160135686,
+      "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.9003971250494942,
+      "itl_mean": 0.013298122452176882
     },
     {
       "shed": false,
-      "ttft": 2.949316499987617,
+      "ttft": 0.41545770794618875,
       "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.40098895807750523,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2488,19 +563,25 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.41412162501364946,
+      "itl_mean": 0.013574919988803396
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.3377320000436157,
+      "itl_mean": 0.012284329504941472
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.5967637500725687,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2510,22 +591,23 @@
     },
     {
       "shed": false,
-      "ttft": 3.0541610829532146,
-      "itl_mean": 0.011771449038329032
-    },
-    {
-      "shed": true
+      "ttft": 0.42253508302383125,
+      "itl_mean": 0.013567133982272434
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.4390874169766903,
+      "itl_mean": 0.01401585922160718
     },
     {
       "shed": false,
-      "ttft": 2.7413538330001757,
-      "itl_mean": 0.011556594854674154
+      "ttft": 0.46654341591056436,
+      "itl_mean": 0.012226369369330371
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.6122007090598345,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2534,13 +616,19 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.3136223340407014,
+      "itl_mean": 0.014582158164366296
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.3090087079908699,
+      "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.8163139999378473,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2552,7 +640,9 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.6678375829942524,
+      "itl_mean": 0.011824586942496423
     },
     {
       "shed": true
@@ -2561,10 +651,14 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.6769692079396918,
+      "itl_mean": 0.012759731523880375
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.34725933405570686,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2574,8 +668,8 @@
     },
     {
       "shed": false,
-      "ttft": 2.7028169999830425,
-      "itl_mean": null
+      "ttft": 0.4819493329850957,
+      "itl_mean": 0.014352586044444015
     },
     {
       "shed": true
@@ -2588,44 +682,52 @@
     },
     {
       "shed": false,
-      "ttft": 2.292732874979265,
-      "itl_mean": null
+      "ttft": 0.7142982920631766,
+      "itl_mean": 0.013100218511264743
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.9170202920213342,
+      "itl_mean": 0.013078833610638226
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.8140772499609739,
+      "itl_mean": 0.013868166183940423
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.6148112500086427,
+      "itl_mean": null
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.3506002080393955,
+      "itl_mean": 0.01405668091629782
     },
     {
       "shed": false,
-      "ttft": 3.0000276250066236,
-      "itl_mean": 0.014806739754066421
+      "ttft": 0.6100009169895202,
+      "itl_mean": null
     },
     {
       "shed": false,
-      "ttft": 2.851086749928072,
-      "itl_mean": 0.01188429311577691
+      "ttft": 0.5681397920707241,
+      "itl_mean": 0.014268316220688193
     },
     {
       "shed": false,
-      "ttft": 2.8424934999784455,
-      "itl_mean": 6.592972635257023e-06
+      "ttft": 0.29232383298221976,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2637,9 +739,7 @@
       "shed": true
     },
     {
-      "shed": false,
-      "ttft": 2.7487596669234335,
-      "itl_mean": null
+      "shed": true
     },
     {
       "shed": true
@@ -2648,28 +748,44 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.2758279589470476,
+      "itl_mean": 0.017807947580642518
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.3117396660381928,
+      "itl_mean": 0.023909048802268348
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.8148541660048068,
+      "itl_mean": 0.015418460804740188
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.2201586669543758,
+      "itl_mean": 0.016742938888880114
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.7972706250147894,
+      "itl_mean": 0.014461477017150549
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.3631500829942524,
+      "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 2.105110084055923,
+      "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.8924640419427305,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2684,22 +800,44 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 2.2031400830019265,
+      "itl_mean": 1.2249242740147042e-05
+    },
+    {
+      "shed": false,
+      "ttft": 1.9045395840657875,
+      "itl_mean": null
+    },
+    {
+      "shed": false,
+      "ttft": 1.4013389999745414,
+      "itl_mean": null
     },
     {
       "shed": true
+    },
+    {
+      "shed": false,
+      "ttft": 1.8038112500216812,
+      "itl_mean": 0.008292399431129211
     },
     {
       "shed": false,
-      "ttft": 2.955751666915603,
-      "itl_mean": 0.01763188320469591
+      "ttft": 0.790923458058387,
+      "itl_mean": 0.017222904332878965
     },
     {
       "shed": false,
-      "ttft": 3.207930708071217,
-      "itl_mean": 0.014199499505133752
+      "ttft": 1.6027507079998031,
+      "itl_mean": 0.012720740877079128
     },
     {
+      "shed": false,
+      "ttft": 0.9647228749236092,
+      "itl_mean": 5.8190891212677655e-06
+    },
+    {
       "shed": true
     },
     {
@@ -2710,28 +848,41 @@
     },
     {
       "shed": true
+    },
+    {
+      "shed": false,
+      "ttft": 1.5019561669323593,
+      "itl_mean": 0.012872525462794496
     },
     {
       "shed": false,
-      "ttft": 2.947100416989997,
+      "ttft": 0.9385134580079466,
       "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.300421291962266,
+      "itl_mean": 0.014376857311394558
     },
     {
       "shed": false,
-      "ttft": 2.4836938329972327,
-      "itl_mean": 0.012907443548394968
+      "ttft": 0.9889499159762636,
+      "itl_mean": 0.013737425974146131
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.7005237500416115,
+      "itl_mean": 0.012575906588725986
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.6470557920401916,
+      "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.9137491249712184,
+      "itl_mean": 0.010068838797797937
     },
     {
       "shed": true
@@ -2740,9 +891,7 @@
       "shed": true
     },
     {
-      "shed": false,
-      "ttft": 3.1868105420144275,
-      "itl_mean": null
+      "shed": true
     },
     {
       "shed": true
@@ -2758,32 +907,42 @@
     },
     {
       "shed": false,
-      "ttft": 3.5130852500442415,
+      "ttft": 0.5844832080183551,
       "itl_mean": null
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.7489251249935478,
+      "itl_mean": 0.010137132722539481
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 1.7095741661032662,
+      "itl_mean": 0.01341741105604272
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.9704704590840265,
+      "itl_mean": 0.010382836439591179
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.548895708983764,
+      "itl_mean": 0.011137552468830513
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.3569768749875948,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2798,61 +957,60 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.45891416596714407,
+      "itl_mean": 0.01156718534586052
     },
     {
       "shed": false,
-      "ttft": 3.196822709054686,
-      "itl_mean": null
+      "ttft": 1.0058012088993564,
+      "itl_mean": 0.011852033243448747
     },
     {
       "shed": false,
-      "ttft": 3.9147055830108,
+      "ttft": 0.8848063329933211,
       "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.7840112920384854,
+      "itl_mean": null
     },
     {
       "shed": true
     },
     {
       "shed": true
-    },
-    {
-      "shed": false,
-      "ttft": 3.1707667500013486,
-      "itl_mean": 0.026330369000788778
     },
     {
       "shed": false,
-      "ttft": 3.4893343329895288,
-      "itl_mean": null
+      "ttft": 0.4847216670168564,
+      "itl_mean": 0.012020775134534768
     },
     {
       "shed": false,
-      "ttft": 3.1287434580735862,
-      "itl_mean": 0.01816810864441654
+      "ttft": 0.257443833979778,
+      "itl_mean": 0.013259756410172066
     },
     {
       "shed": false,
-      "ttft": 3.4418063749326393,
-      "itl_mean": 0.01343350151807747
+      "ttft": 1.4689744159113616,
+      "itl_mean": 0.012182677868986502
     },
     {
       "shed": false,
-      "ttft": 3.389060707995668,
-      "itl_mean": 1.235984999573592e-05
+      "ttft": 0.2635942919878289,
+      "itl_mean": 0.013695486083937189
     },
     {
       "shed": false,
-      "ttft": 3.186555041000247,
+      "ttft": 0.3529956249985844,
       "itl_mean": null
     },
     {
       "shed": false,
-      "ttft": 2.9860646249726415,
-      "itl_mean": 0.012366527439344946
+      "ttft": 0.392063207924366,
+      "itl_mean": 0.016300377545342075
     },
     {
       "shed": true
@@ -2861,7 +1019,9 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.6835032089147717,
+      "itl_mean": 0.016813142197307847
     },
     {
       "shed": true
@@ -2870,30 +1030,37 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.4448968750657514,
+      "itl_mean": 0.013459804179146885
+    },
+    {
+      "shed": false,
+      "ttft": 0.3258417500182986,
+      "itl_mean": 0.01738574632155873
     },
     {
       "shed": true
     },
     {
       "shed": false,
-      "ttft": 3.2862173749599606,
-      "itl_mean": null
+      "ttft": 0.3547308329725638,
+      "itl_mean": 0.018038393805674728
     },
     {
       "shed": false,
-      "ttft": 2.9361742499750108,
+      "ttft": 0.8133571669459343,
       "itl_mean": null
     },
     {
       "shed": false,
-      "ttft": 3.463763292063959,
-      "itl_mean": 0.009719770338657932
+      "ttft": 0.5825734579702839,
+      "itl_mean": 0.013932232986020684
     },
     {
       "shed": false,
-      "ttft": 3.0532924589933828,
-      "itl_mean": 1.259090971540321e-05
+      "ttft": 0.9452162910019979,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2905,13 +1072,19 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.5300089999800548,
+      "itl_mean": null
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.4480295419925824,
+      "itl_mean": 0.013252031336233547
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.40984158299397677,
+      "itl_mean": null
     },
     {
       "shed": true
@@ -2921,16 +1094,18 @@
     },
     {
       "shed": false,
-      "ttft": 3.303094125003554,
-      "itl_mean": 1.4538529662872261e-05
+      "ttft": 0.5547645000042394,
+      "itl_mean": 0.01455357210141813
     },
     {
       "shed": false,
-      "ttft": 3.2368612909922376,
-      "itl_mean": 0.010203552341497526
+      "ttft": 0.8598933330504224,
+      "itl_mean": 0.01870883482167431
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.8146650830749422,
+      "itl_mean": 0.013608902548214482
     },
     {
       "shed": true
@@ -2939,22 +1114,50 @@
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.43412291700951755,
+      "itl_mean": 0.015961755615605328
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.4406235000351444,
+      "itl_mean": 0.01390053136964087
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.5110752909677103,
+      "itl_mean": 0.014648621941245544
     },
     {
       "shed": true
     },
     {
-      "shed": true
+      "shed": false,
+      "ttft": 0.9628693329868838,
+      "itl_mean": null
+    },
+    {
+      "shed": false,
+      "ttft": 0.7658697499427944,
+      "itl_mean": 0.013862979852166942
     },
     {
       "shed": true
+    },
+    {
+      "shed": false,
+      "ttft": 0.7583390000509098,
+      "itl_mean": 0.009345984179526567
+    },
+    {
+      "shed": false,
+      "ttft": 0.4167102089850232,
+      "itl_mean": null
+    },
+    {
+      "shed": false,
+      "ttft": 0.6195119170006365,
+      "itl_mean": 5.422193290931838e-06
     },
     {
       "shed": true
@@ -2979,41 +1182,46 @@
     },
     {
       "shed": false,
-      "ttft": 3.0124612080398947,
-      "itl_mean": null
+      "ttft": 1.0232862920966,
+      "itl_mean": 0.01397395267751131
     },
     {
       "shed": false,
-      "ttft": 3.2356417500413954,
-      "itl_mean": 0.010379290177730755
+      "ttft": 0.8230152919422835,
+      "itl_mean": 0.01111720267964964
     },
     {
       "shed": true
+    },
+    {
+      "shed": false,
+      "ttft": 0.5349270419683307,
+      "itl_mean": null
     },
     {
       "shed": false,
-      "ttft": 3.3386740420246497,
-      "itl_mean": 0.01019362176684181
+      "ttft": 0.9231789580080658,
+      "itl_mean": 0.012671618450307445
     },
     {
       "shed": false,
-      "ttft": 3.287817458040081,
-      "itl_mean": 0.009462301335297525
+      "ttft": 0.7219734999816865,
+      "itl_mean": 0.012554324999451636
     },
     {
       "shed": false,
-      "ttft": 2.2724985840031877,
-      "itl_mean": 0.0046394648712261444
+      "ttft": 0.863013583002612,
+      "itl_mean": 0.01384899109222447
     },
     {
       "shed": false,
-      "ttft": 3.25125662505161,
-      "itl_mean": 0.005954007542860727
+      "ttft": 0.6354641249636188,
+      "itl_mean": 0.015466826087187814
     },
     {
       "shed": false,
-      "ttft": 2.2441468329634517,
-      "itl_mean": 0.009824135147399552
+      "ttft": 0.735414583934471,
+      "itl_mean": 0.014470948738836876
     }
   ]
 }
