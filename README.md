@@ -77,9 +77,14 @@ GPU (not the mock upstream) — raw data in `bench/results/`.
   not overlap in either run order tested, but which one came out faster
   flipped depending on whether it ran first or second in the sequence —
   evidence the delta was dominated by a run-order confound (GPU/cache state
-  drifting over the session) rather than a clean strategy effect. A proper
-  verdict would need an interleaved or randomized run order across more
-  repeats.
+  drifting over the session) rather than a clean strategy effect, since the
+  two arms were two separate timed runs minutes apart. The gateway now
+  supports picking a strategy per request via `x-kvroute-strategy`
+  (`app.py` keeps both routers live instead of fixing one at startup), and
+  `bench/ab_interleaved.py` uses that to alternate strategies per request
+  in one continuous, randomized-order sequence — controlling for the
+  confound instead of just flagging it. Not yet run against a real backend
+  (needs a GPU pod); numbers above are from the original two-run version.
 - **Stress test** (three load profiles run as concurrent processes, 60
   req/s combined): 2630 requests sent, 466 admitted, 2164 shed by admission
   control. The gateway stayed healthy and responsive throughout — the
@@ -113,6 +118,7 @@ python bench/capture_baseline.py                       # baseline TTFT
 python bench/eval_semantic_cache.py                     # hit-rate / false-hit-rate curve
 python bench/ab_run.py --strategy round_robin           # repeat with --strategy prefix_aware, then
 python bench/ab_compare.py                               # compare the two
+python bench/ab_interleaved.py --pairs 30                # or: interleaved, randomized-order A/B
 python bench/load_harness.py --profile shared_prefix    # also: unique_prompt, mixed_tenant
 ```
 

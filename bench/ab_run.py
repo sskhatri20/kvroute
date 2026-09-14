@@ -1,15 +1,18 @@
 """One arm of the A/B: repeated runs against a running gateway.
 
-The strategy itself is fixed at gateway startup (KVROUTE_STRATEGY env var),
-not by this script, since the router is chosen once at import time in
-app.py. Run this once per arm:
+Sends x-kvroute-strategy on every request, so the gateway does not need to
+be restarted between arms (app.py keeps both routers live and picks per
+request). Run both arms back to back against the same running gateway:
 
-    KVROUTE_STRATEGY=round_robin  uvicorn app:app --port 8000 &
+    uvicorn app:app --port 8000 &
     python bench/ab_run.py --strategy round_robin --repeats 3 --n 30
-    # kill the gateway, restart with the other strategy
-    KVROUTE_STRATEGY=prefix_aware uvicorn app:app --port 8000 &
     python bench/ab_run.py --strategy prefix_aware --repeats 3 --n 30
     python bench/ab_compare.py
+
+Two runs still measured minutes apart like this can drift with whatever
+changed on the backend in between (GPU/cache state) — see
+bench/ab_interleaved.py for a run that alternates strategy per request
+within one continuous sequence, which controls for that.
 """
 import argparse
 import asyncio
@@ -24,7 +27,7 @@ GATEWAY = "http://localhost:8000/v1/chat/completions"
 SHARED_SYSTEM_PROMPT = "You are a helpful assistant. " * 40
 
 
-async def one_request(client: httpx.AsyncClient, question: str) -> float:
+async def one_request(client: httpx.AsyncClient, question: str, strategy: str) -> float:
     started = time.perf_counter()
     async with client.stream(
         "POST",
@@ -36,20 +39,21 @@ async def one_request(client: httpx.AsyncClient, question: str) -> float:
                 {"role": "user", "content": question},
             ],
         },
+        headers={"x-kvroute-strategy": strategy},
     ) as response:
         async for _ in response.aiter_bytes():
             return time.perf_counter() - started
     raise RuntimeError("no bytes received from gateway")
 
 
-async def one_run(n: int) -> dict:
+async def one_run(n: int, strategy: str) -> dict:
     async with httpx.AsyncClient(timeout=30.0) as client:
-        ttfts = [await one_request(client, f"question {i}") for i in range(n)]
+        ttfts = [await one_request(client, f"question {i}", strategy) for i in range(n)]
     return {"mean": statistics.mean(ttfts), "stdev": statistics.stdev(ttfts) if n > 1 else 0.0, "n": n}
 
 
 async def main(strategy: str, repeats: int, n: int, out: Path) -> None:
-    runs = [await one_run(n) for _ in range(repeats)]
+    runs = [await one_run(n, strategy) for _ in range(repeats)]
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({"strategy": strategy, "runs": runs}, indent=2))
     print(json.dumps(runs, indent=2))

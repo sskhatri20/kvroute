@@ -32,7 +32,11 @@ backends = [
     Backend(url="http://localhost:8001/v1/chat/completions"),
     Backend(url="http://localhost:8002/v1/chat/completions"),
 ]
-router = PrefixAwareRouter() if STRATEGY == "prefix_aware" else RoundRobinRouter()
+# Both routers are always live so a single request can pick either one via
+# x-kvroute-strategy — needed to A/B them interleaved in one continuous run
+# instead of restarting the gateway per arm, which confounds the comparison
+# with whatever drifted (GPU/cache state) between the two separate runs.
+routers = {"round_robin": RoundRobinRouter(), "prefix_aware": PrefixAwareRouter()}
 redis = Redis.from_url(REDIS_URL)
 exact_cache = ExactCache(redis)
 semantic_cache = SemanticCache(redis)
@@ -71,6 +75,10 @@ async def chat_completions(request: Request):
     priority = request.headers.get("x-priority", "interactive")
     if priority not in ("interactive", "batch"):
         priority = "interactive"
+    strategy = request.headers.get("x-kvroute-strategy", STRATEGY)
+    if strategy not in routers:
+        strategy = STRATEGY
+    router = routers[strategy]
 
     shed_reason = admission.admit(tenant, priority, payload)
     if shed_reason:
@@ -110,12 +118,12 @@ async def chat_completions(request: Request):
                 for chunk in cached_chunks:
                     now = time.perf_counter()
                     if first:
-                        ttft_seconds.labels(backend="cache", strategy=STRATEGY, cache_state=cache_state).observe(
+                        ttft_seconds.labels(backend="cache", strategy=strategy, cache_state=cache_state).observe(
                             now - started
                         )
                         first = False
                     else:
-                        itl_seconds.labels(backend="cache", strategy=STRATEGY, cache_state=cache_state).observe(
+                        itl_seconds.labels(backend="cache", strategy=strategy, cache_state=cache_state).observe(
                             now - last
                         )
                     last = now
@@ -148,7 +156,7 @@ async def chat_completions(request: Request):
     backend.record_success()
     backend.inflight += 1
     inflight.labels(backend=backend.name).set(backend.inflight)
-    requests_total.labels(backend=backend.name, strategy=STRATEGY).inc()
+    requests_total.labels(backend=backend.name, strategy=strategy).inc()
     started = time.perf_counter()
 
     async def stream():
@@ -160,12 +168,12 @@ async def chat_completions(request: Request):
             async for chunk in upstream.aiter_bytes():
                 now = time.perf_counter()
                 if first_token:
-                    ttft_seconds.labels(backend=backend.name, strategy=STRATEGY, cache_state="miss").observe(
+                    ttft_seconds.labels(backend=backend.name, strategy=strategy, cache_state="miss").observe(
                         now - started
                     )
                     first_token = False
                 else:
-                    itl_seconds.labels(backend=backend.name, strategy=STRATEGY, cache_state="miss").observe(
+                    itl_seconds.labels(backend=backend.name, strategy=strategy, cache_state="miss").observe(
                         now - last_chunk_at
                     )
                 last_chunk_at = now
