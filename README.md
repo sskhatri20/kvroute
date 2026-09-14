@@ -1,14 +1,66 @@
 # kvroute
 
-Building through `kvroute-build-guide.md`, step by step.
+A latency-aware gateway in front of vLLM replicas: it reuses KV cache by
+routing requests to the replica already holding a matching prompt prefix,
+avoids redundant inference with a two-tier response cache, and protects
+GPU capacity with token-budget admission control.
 
-## Status
+## Why
 
-Steps 1-5 and 7-12 are implemented against the mock upstream
-(`tests/mock_upstream.py`). Steps 13/14 (writeup, EKS) are intentionally not
-code. Step 6 (a real vLLM backend) has also been run end-to-end on a GPU pod
-— see [Running against real vLLM](#running-against-real-vllm-gpu) and the
-captured results in `bench/results/`.
+Wiring an HTTP proxy in front of an LLM backend is the easy part. The
+interesting problems are the ones specific to serving LLMs: a KV cache that
+only pays off if requests with the same prefix land on the same replica,
+response caching that has to decide what "the same request" even means
+(exact bytes? semantically equivalent?), and admission control that has to
+budget on tokens instead of requests because a 50-token and a 5000-token
+request cost two orders of magnitude apart. This project exists to make
+those tradeoffs concrete and measurable rather than theoretical.
+
+## Concepts used
+
+| Concept | Where |
+|---|---|
+| Streaming passthrough with client-disconnect cancellation | `app.py` |
+| TTFT / ITL latency histograms, sized for sub-second LLM latencies | `metrics.py` |
+| Round-robin routing with failure tracking + cooldown | `router.py` |
+| Exact-match response cache, per-tenant namespaced, Redis-backed | `cache.py` |
+| Semantic response cache (embedding + cosine similarity threshold) | `embeddings.py`, `semantic_cache.py` |
+| Prefix-aware routing with load-imbalance shedding | `router.py` |
+| Token-bucket admission control with interactive/batch priority classes | `admission.py` |
+| Open-loop load generation (fixed send rate, doesn't hide saturation) | `bench/load_harness.py` |
+
+## Simplifications vs. `arch.md`
+
+`arch.md` is the aspirational full spec. A few deliberate simplifications
+remain, since this doesn't need to be production infrastructure:
+
+- **Prefix index stays in-process** rather than in Redis — it only produces
+  reproducible routing with a single uvicorn worker, which is fine here.
+  Both caches (exact-match and semantic) *do* use Redis, with per-tenant key
+  namespacing and TTL.
+- **Semantic search is a plain-Redis linear scan** (SCAN + client-side cosine
+  similarity), not RediSearch/HNSW. That's the same O(n) cost an in-memory
+  list would have; Redis buys namespacing and shared TTL eviction here, not
+  search speed. A real ANN index is the natural next step once n stops
+  being small.
+- **Toy embeddings, not sentence-transformers.** `embeddings.py` is a
+  stopword-filtered hashing trick, not a real model. It's enough to
+  demonstrate cosine similarity and threshold tuning without a
+  torch/model-download dependency. Swapping in a real model is a
+  one-function change.
+- **Admission control reserves capacity instead of preempting.** Interactive
+  and batch traffic share a concurrency budget where batch is capped at
+  half; there's no literal preemption of an in-flight streaming request
+  (there isn't a natural pause point once an HTTP stream is open). Same
+  effect on interactive latency, less machinery.
+- **Exact-match cache stores chunks as base64 inside one JSON value per
+  key**, namespaced per tenant with a single TTL — keeps the whole response
+  under one TTL instead of managing eviction per-chunk.
+
+## Results
+
+Captured against a real `Qwen/Qwen2.5-1.5B-Instruct` vLLM backend on an L4
+GPU (not the mock upstream) — raw data in `bench/results/`.
 
 | TTFT p50/p95/p99 | ITL p50 |
 |---|---|
@@ -18,68 +70,28 @@ captured results in `bench/results/`.
 |---|---|
 | ![Throughput requests/s](bench/results/grafana-throughput.png) | ![Inflight per backend](bench/results/grafana-inflight.png) |
 
-| Step | What | File |
-|---|---|---|
-| 1-2 | Streaming passthrough + cancellation | `app.py` |
-| 3 | TTFT/ITL metrics | `metrics.py` |
-| 4 | Baseline capture | `bench/capture_baseline.py` |
-| 5 | Round-robin routing + health tracking | `router.py` |
-| 7 | Exact-match cache | `cache.py` |
-| 8 | Semantic cache + eval | `embeddings.py`, `semantic_cache.py`, `bench/eval_semantic_cache.py` |
-| 9-10 | Prefix-aware routing + imbalance shedding + A/B | `router.py`, `bench/ab_run.py`, `bench/ab_compare.py` |
-| 11 | Admission control | `admission.py` |
-| 12 | Open-loop load harness | `bench/load_harness.py` |
-
-## Simplifications vs. `arch.md`
-
-`arch.md` is the aspirational full spec. A couple of deliberate
-simplifications remain, for a learning repo that doesn't need production
-infrastructure:
-
-- **Prefix index stays in-process,** per Step 9 of the build guide itself —
-  moving it to Redis is the guide's own documented next step, not something
-  to build now. Both caches (exact-match and semantic) *do* use Redis, with
-  per-tenant key namespacing and TTL.
-- **Semantic search is a plain-Redis linear scan (SCAN + client-side cosine
-  similarity), not RediSearch/HNSW.** That's the same O(n) cost an in-memory
-  list would have; Redis buys namespacing and shared TTL eviction here, not
-  search speed. A real ANN index is the documented next step once n stops
-  being small.
-- **Toy embeddings, not sentence-transformers.** `embeddings.py` is a
-  stopword-filtered hashing trick, not a real model. It's enough to
-  demonstrate cosine similarity, threshold tuning, and the negation
-  blind-spot the guide asks you to find — without a torch/model-download
-  dependency. Swapping in a real model is a one-function change.
-- **Admission control reserves capacity instead of preempting.** Budgets are
-  on tokens, not requests — a 50-token and a 5000-token request cost two
-  orders of magnitude apart, so a request-rate limit lets one long-prompt
-  tenant starve everyone else while under quota. Interactive and batch share
-  a concurrency budget where batch is capped at half; there's no literal
-  preemption of an in-flight streaming request (there isn't a natural pause
-  point once an HTTP stream is open). Same effect on interactive latency,
-  less machinery.
-- **Exact-match cache stores chunks as base64 inside one JSON value per key,**
-  namespaced per tenant with a single TTL — Redis strings handle arbitrary
-  bytes fine, but keeping the whole response as one value keeps the TTL
-  simple.
-
-## Benchmarking notes
-
-- **A/B comparison (`bench/ab_compare.py`)** reports each run's mean with a
-  95% CI (normal approximation: mean +/- 1.96 * stdev / sqrt(n)) and flags
-  when the two arms' CIs overlap on any repeated run as an inconclusive
-  result.
-- **A/B workload (`bench/ab_run.py`)** is shared-prefix heavy (one long
-  system prompt reused across requests), since that's the pattern prefix
-  routing is meant to help. Against `tests/mock_upstream.py`, which doesn't
-  model prefix-cache speedup, expect no real delta — that only shows up once
-  the backend is a real vLLM instance running with `--enable-prefix-caching`.
-- **Load harness (`bench/load_harness.py`)** is open-loop, not closed-loop:
-  requests are sent at a fixed rate regardless of when earlier ones finish.
-  A closed-loop generator (wait for a response before sending the next) caps
-  offered load at the gateway's own latency and hides saturation.
+- **Baseline TTFT** (single request at a time, `bench/capture_baseline.py`):
+  p50 308ms, p95 542ms, p99 898ms.
+- **round_robin vs. prefix_aware A/B** (`bench/ab_run.py` +
+  `bench/ab_compare.py`): the two strategies' TTFT confidence intervals did
+  not overlap in either run order tested, but which one came out faster
+  flipped depending on whether it ran first or second in the sequence —
+  evidence the delta was dominated by a run-order confound (GPU/cache state
+  drifting over the session) rather than a clean strategy effect. A proper
+  verdict would need an interleaved or randomized run order across more
+  repeats.
+- **Stress test** (three load profiles run as concurrent processes, 60
+  req/s combined): 2630 requests sent, 466 admitted, 2164 shed by admission
+  control. The gateway stayed healthy and responsive throughout — the
+  token-bucket + concurrency cap did its job protecting the two vLLM
+  replicas from overload instead of letting latency degrade unbounded.
+- **Cache hits confirmed live**: a repeated identical request returned
+  `x-kvroute-cache: exact_hit`; a reworded-but-similar prompt returned
+  `x-kvroute-cache: semantic_hit`.
 
 ## Running it
+
+Against the mock upstream (`tests/mock_upstream.py`, no GPU needed):
 
 ```bash
 poetry install
@@ -93,31 +105,45 @@ curl -N -X POST localhost:8000/v1/chat/completions \
   -d '{"stream":true,"messages":[{"role":"user","content":"hi"}]}'
 ```
 
-Acceptance checks:
+Benchmarks and checks:
 
 ```bash
-python tests/run_smoke.py                    # Step 2: cancellation
-python bench/capture_baseline.py             # Step 4: baseline TTFT
-python bench/eval_semantic_cache.py          # Step 8: hit-rate / false-hit-rate curve
-python bench/ab_run.py --strategy round_robin   # Step 10: repeat with prefix_aware, then
-python bench/ab_compare.py                      #          compare
-python bench/load_harness.py --profile shared_prefix  # Step 12 (also unique_prompt, mixed_tenant)
+python tests/run_smoke.py                             # cancellation on client disconnect
+python bench/capture_baseline.py                       # baseline TTFT
+python bench/eval_semantic_cache.py                     # hit-rate / false-hit-rate curve
+python bench/ab_run.py --strategy round_robin           # repeat with --strategy prefix_aware, then
+python bench/ab_compare.py                               # compare the two
+python bench/load_harness.py --profile shared_prefix    # also: unique_prompt, mixed_tenant
 ```
 
-## Running against real vLLM (GPU)
+### Against real vLLM (GPU)
 
-The mock upstream (`tests/mock_upstream.py`) can't produce real prefix-cache
-or throughput behavior — it's just canned tokens. To get real numbers,
-`Dockerfile` builds a container that starts Redis, two
-`Qwen/Qwen2.5-1.5B-Instruct` vLLM instances (`--enable-prefix-caching`, ports
-8001/8002), and the gateway itself, all on boot. One L4 or A10 (24GB) is
-enough.
+The mock upstream can't produce real prefix-cache or throughput behavior —
+it's just canned tokens. `Dockerfile` builds a container that starts Redis,
+two `Qwen/Qwen2.5-1.5B-Instruct` vLLM instances (`--enable-prefix-caching`,
+ports 8001/8002), and the gateway itself, all on boot. One L4 or A10 (24GB)
+is enough.
 
 ```bash
 docker build -t kvroute-gpu .
 docker run --gpus all -p 8000:8000 -p 8001:8001 -p 8002:8002 kvroute-gpu
 ```
 
-Override the model with `-e VLLM_MODEL=...`. Once it's up, run
-`tests/run_smoke.py` and the acceptance checks above against
-`localhost:8000` as usual — no need to shell into the container.
+Override the model with `-e VLLM_MODEL=...`. Once it's up, run the same
+benchmarks above against `localhost:8000`.
+
+### Observability
+
+```bash
+docker compose up -d redis prometheus grafana renderer
+```
+
+Prometheus scrapes the gateway's `/metrics` every second (TTFT is
+sub-second, so the default 15s interval would alias right over it), and a
+`kvroute` dashboard (TTFT/ITL/throughput/inflight) is provisioned in
+Grafana at `localhost:3000` automatically. The `renderer` service
+(`grafana-image-renderer`) lets you pull any panel as a PNG directly:
+
+```bash
+curl "http://localhost:3000/render/d-solo/kvroute/kvroute?orgId=1&panelId=1&width=1400&height=700&from=now-15m&to=now" -o ttft.png
+```
