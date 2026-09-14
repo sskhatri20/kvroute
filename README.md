@@ -5,8 +5,12 @@ Building through `kvroute-build-guide.md`, step by step.
 ## Status
 
 Steps 1-5 and 7-12 are implemented against the mock upstream
-(`tests/mock_upstream.py`). Step 6 (a real vLLM backend) and Steps 13/14
-(writeup, EKS) are intentionally not code.
+(`tests/mock_upstream.py`). Steps 13/14 (writeup, EKS) are intentionally not
+code. Step 6 (a real vLLM backend) has also been run end-to-end on a GPU pod
+— see [Running against real vLLM](#running-against-real-vllm-gpu) and the
+captured results in `bench/results/`.
+
+![Grafana dashboard: TTFT percentiles, ITL, per-backend throughput, and inflight depth from a real vLLM run](bench/results/grafana-dashboard.png)
 
 | Step | What | File |
 |---|---|---|
