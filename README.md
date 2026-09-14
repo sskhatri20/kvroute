@@ -93,3 +93,21 @@ python bench/ab_run.py --strategy round_robin   # Step 10: repeat with prefix_aw
 python bench/ab_compare.py                      #          compare
 python bench/load_harness.py --profile shared_prefix  # Step 12 (also unique_prompt, mixed_tenant)
 ```
+
+## Running against real vLLM (GPU)
+
+The mock upstream (`tests/mock_upstream.py`) can't produce real prefix-cache
+or throughput behavior — it's just canned tokens. To get real numbers,
+`Dockerfile` builds a container that starts Redis, two
+`Qwen/Qwen2.5-1.5B-Instruct` vLLM instances (`--enable-prefix-caching`, ports
+8001/8002), and the gateway itself, all on boot. One L4 or A10 (24GB) is
+enough.
+
+```bash
+docker build -t kvroute-gpu .
+docker run --gpus all -p 8000:8000 -p 8001:8001 -p 8002:8002 kvroute-gpu
+```
+
+Override the model with `-e VLLM_MODEL=...`. Once it's up, run
+`tests/run_smoke.py` and the acceptance checks above against
+`localhost:8000` as usual — no need to shell into the container.
