@@ -43,3 +43,21 @@ inflight = Gauge(
     "In-flight requests currently streaming per backend",
     ["backend"],
 )
+
+cache_lookups_total = Counter(
+    "kvroute_cache_lookups_total",
+    "Cache lookups by layer and outcome",
+    ["layer", "outcome"],  # layer: exact|semantic, outcome: hit|miss
+)
+
+prefix_routing_total = Counter(
+    "kvroute_prefix_routing_total",
+    "Prefix-aware routing decisions",
+    ["outcome"],  # hit|miss|shed_imbalance
+)
+
+admission_total = Counter(
+    "kvroute_admission_total",
+    "Admission control decisions",
+    ["priority", "outcome"],  # outcome: admitted|shed_budget|shed_capacity
+)

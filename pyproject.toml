@@ -12,8 +12,11 @@ dependencies = [
     "uvicorn (>=0.52.4,<0.53.0)",
     "httpx (>=0.28.1,<0.29.0)",
     "prometheus-client (>=0.26.0,<0.27.0)",
-    "vllm"
+    "redis (>=5.0.0,<6.0.0)"
 ]
+
+[project.optional-dependencies]
+vllm = ["vllm"]
 
 [tool.poetry]
 package-mode = false

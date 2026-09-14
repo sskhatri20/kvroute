@@ -1,4 +1,9 @@
 services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
   prometheus:
     image: prom/prometheus:v2.53.0
     ports:
