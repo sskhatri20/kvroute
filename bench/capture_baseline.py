@@ -39,7 +39,7 @@ def quantile(values: list[float], q: float) -> float:
 async def main(n: int, out: Path) -> None:
     async with httpx.AsyncClient(timeout=30.0) as client:
         # Sequential, not concurrent: this is a baseline of single-request
-        # latency, not a load test (that's Step 12's job).
+        # latency, not a load test (see bench/load_harness.py).
         ttfts = [await one_request(client) for _ in range(n)]
 
     result = {

@@ -40,11 +40,34 @@ infrastructure:
   demonstrate cosine similarity, threshold tuning, and the negation
   blind-spot the guide asks you to find — without a torch/model-download
   dependency. Swapping in a real model is a one-function change.
-- **Admission control reserves capacity instead of preempting.** Interactive
-  and batch share a concurrency budget where batch is capped at half; there's
-  no literal preemption of an in-flight streaming request (there isn't a
-  natural pause point once an HTTP stream is open). Same effect on
-  interactive latency, less machinery.
+- **Admission control reserves capacity instead of preempting.** Budgets are
+  on tokens, not requests — a 50-token and a 5000-token request cost two
+  orders of magnitude apart, so a request-rate limit lets one long-prompt
+  tenant starve everyone else while under quota. Interactive and batch share
+  a concurrency budget where batch is capped at half; there's no literal
+  preemption of an in-flight streaming request (there isn't a natural pause
+  point once an HTTP stream is open). Same effect on interactive latency,
+  less machinery.
+- **Exact-match cache stores chunks as base64 inside one JSON value per key,**
+  namespaced per tenant with a single TTL — Redis strings handle arbitrary
+  bytes fine, but keeping the whole response as one value keeps the TTL
+  simple.
+
+## Benchmarking notes
+
+- **A/B comparison (`bench/ab_compare.py`)** reports each run's mean with a
+  95% CI (normal approximation: mean +/- 1.96 * stdev / sqrt(n)) and flags
+  when the two arms' CIs overlap on any repeated run as an inconclusive
+  result.
+- **A/B workload (`bench/ab_run.py`)** is shared-prefix heavy (one long
+  system prompt reused across requests), since that's the pattern prefix
+  routing is meant to help. Against `tests/mock_upstream.py`, which doesn't
+  model prefix-cache speedup, expect no real delta — that only shows up once
+  the backend is a real vLLM instance running with `--enable-prefix-caching`.
+- **Load harness (`bench/load_harness.py`)** is open-loop, not closed-loop:
+  requests are sent at a fixed rate regardless of when earlier ones finish.
+  A closed-loop generator (wait for a response before sending the next) caps
+  offered load at the gateway's own latency and hides saturation.
 
 ## Running it
 

@@ -1,8 +1,8 @@
-"""Step 10 — compare the two arms captured by ab_run.py.
+"""Compare the two arms captured by ab_run.py.
 
 Reports each run's mean with a 95% CI (normal approximation:
 mean +/- 1.96 * stdev / sqrt(n)) and whether the two arms' CIs overlap
-across all repeated runs, per the guide's acceptance check.
+across all repeated runs.
 """
 import json
 import math
@@ -41,7 +41,7 @@ def main() -> None:
         )
 
     if any_overlap:
-        print("\nNo consistent TTFT delta (CIs overlap on at least one run). See Step 10's kill criterion.")
+        print("\nNo consistent TTFT delta (CIs overlap on at least one run).")
     else:
         print("\nNon-overlapping CIs across all runs: measurable TTFT delta.")
 

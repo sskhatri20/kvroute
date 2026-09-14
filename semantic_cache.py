@@ -1,12 +1,3 @@
-"""Step 8 — semantic cache, backed by Redis.
-
-Plain Redis, not RediSearch: candidates are pulled back with SCAN and
-compared client-side. That's an O(n) linear scan same as an in-memory list
-would be — the win from moving to Redis here is per-tenant namespacing and
-TTL-based eviction shared with the rest of the gateway's state, not search
-speed. An HNSW/IVF index (RediSearch, or a dedicated vector DB) is the
-real fix once n stops being small; not worth adding for a toy embedding.
-"""
 from __future__ import annotations
 
 import base64

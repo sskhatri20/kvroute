@@ -62,16 +62,12 @@ class PrefixBinding:
 
 
 class PrefixAwareRouter:
-    """Step 9/10 — route by prompt prefix, with imbalance shedding.
+    """Route by prompt prefix, with imbalance shedding.
 
     Not a `Router` subclass: `pick` here needs the prompt messages and
     returns the outcome alongside the backend, which doesn't fit the
     depth-only `Router.pick(backends) -> Backend` interface the other
     strategies share.
-
-    In-process index: this only produces reproducible routing with a single
-    uvicorn worker. Moving it to Redis is the documented next step if that
-    constraint ever needs lifting.
     """
 
     def __init__(self) -> None:

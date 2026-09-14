@@ -1,4 +1,4 @@
-"""Step 2 acceptance check: client disconnect must cancel the upstream generation.
+"""Client disconnect must cancel the upstream generation.
 
 Usage:
     python -m uvicorn tests.mock_upstream:app --port 8001 &

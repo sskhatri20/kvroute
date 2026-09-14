@@ -1,4 +1,4 @@
-"""Step 10 — one arm of the A/B: repeated runs against a running gateway.
+"""One arm of the A/B: repeated runs against a running gateway.
 
 The strategy itself is fixed at gateway startup (KVROUTE_STRATEGY env var),
 not by this script, since the router is chosen once at import time in
@@ -10,14 +10,6 @@ app.py. Run this once per arm:
     KVROUTE_STRATEGY=prefix_aware uvicorn app:app --port 8000 &
     python bench/ab_run.py --strategy prefix_aware --repeats 3 --n 30
     python bench/ab_compare.py
-
-Workload is shared-prefix heavy (one long system prompt reused across
-requests) since that's the pattern prefix routing is meant to help.
-
-Note: against tests/mock_upstream.py, which doesn't model prefix-cache
-speedup at all, expect no real delta — that's Step 6's job (a real vLLM
-with --enable-prefix-caching). This script is the harness; the effect it's
-measuring only exists once there's a backend capable of producing it.
 """
 import argparse
 import asyncio

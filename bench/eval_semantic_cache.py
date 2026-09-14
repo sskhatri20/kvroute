@@ -1,4 +1,4 @@
-"""Step 8 acceptance check: threshold-vs-hit-rate and threshold-vs-false-hit curves.
+"""Threshold-vs-hit-rate and threshold-vs-false-hit curves for the semantic cache.
 
 Usage:
     python bench/eval_semantic_cache.py

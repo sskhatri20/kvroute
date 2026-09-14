@@ -1,17 +1,3 @@
-"""Step 11 — admission control.
-
-Budgets on tokens, not requests, per the build guide: a 50-token and a
-5000-token request cost two orders of magnitude apart, so a request-rate
-limit lets one long-prompt tenant starve everyone else while under quota.
-
-Simplification from the spec: instead of a real preemptive priority queue
-(which only makes sense once a request can be paused mid-flight, and these
-are already-open streaming HTTP responses), interactive traffic gets a
-reserved slice of concurrency that batch traffic can never take. Batch is
-shed with 429 the moment it would eat into that reserve. Same effect —
-interactive latency stays flat under batch load — without building a
-scheduler around a preemption point that doesn't really exist here.
-"""
 from __future__ import annotations
 
 import time

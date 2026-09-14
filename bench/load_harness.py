@@ -1,9 +1,4 @@
-"""Step 12 — open-loop load harness with three workload profiles.
-
-Open-loop, not closed-loop: requests are sent at a fixed rate regardless of
-when earlier requests finish. A closed-loop generator (wait for a response
-before sending the next) caps offered load at the gateway's own latency and
-hides saturation, which is the naive-and-wrong way to load-test a server.
+"""Open-loop load harness with three workload profiles.
 
 Usage:
     python bench/load_harness.py --profile shared_prefix --rate 5 --duration 10

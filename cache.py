@@ -1,10 +1,3 @@
-"""Step 7 — exact-match cache, backed by Redis.
-
-Per-tenant key namespace and TTL, per the build guide. Chunks are the raw
-SSE bytes captured off the upstream response; they're stored base64-encoded
-inside a JSON array since Redis strings are fine with arbitrary bytes but
-the list structure is easiest to keep as one value with one TTL.
-"""
 from __future__ import annotations
 
 import base64

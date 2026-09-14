@@ -1,17 +1,3 @@
-"""Step 8 — a toy embedding for the semantic cache.
-
-A real system embeds with a local model (MiniLM class) run off the event
-loop. Pulling that in here (torch + model download) is exactly the kind of
-production weight this project is trying to avoid for a learning repo, and
-it would obscure the actual lesson: cosine similarity over a fixed-size
-vector, and picking a threshold against a labelled eval set (see
-bench/eval_semantic_cache.py). The hashing trick below stands in for "a
-model turned text into a vector" without the dependency.
-
-Because this hash is pure Python arithmetic (no I/O, no model forward pass),
-it's cheap enough to run inline on the event loop — the threadpool advice in
-the build guide applies to a real embedding model, not this stand-in.
-"""
 from __future__ import annotations
 
 import hashlib
