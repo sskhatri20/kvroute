@@ -72,19 +72,22 @@ GPU (not the mock upstream) — raw data in `bench/results/`.
 
 - **Baseline TTFT** (single request at a time, `bench/capture_baseline.py`):
   p50 308ms, p95 542ms, p99 898ms.
-- **round_robin vs. prefix_aware A/B** (`bench/ab_run.py` +
-  `bench/ab_compare.py`): the two strategies' TTFT confidence intervals did
-  not overlap in either run order tested, but which one came out faster
-  flipped depending on whether it ran first or second in the sequence —
-  evidence the delta was dominated by a run-order confound (GPU/cache state
-  drifting over the session) rather than a clean strategy effect, since the
-  two arms were two separate timed runs minutes apart. The gateway now
-  supports picking a strategy per request via `x-kvroute-strategy`
-  (`app.py` keeps both routers live instead of fixing one at startup), and
-  `bench/ab_interleaved.py` uses that to alternate strategies per request
-  in one continuous, randomized-order sequence — controlling for the
-  confound instead of just flagging it. Not yet run against a real backend
-  (needs a GPU pod); numbers above are from the original two-run version.
+- **round_robin vs. prefix_aware A/B.** The first attempt (`bench/ab_run.py`
+  + `bench/ab_compare.py`, two separate timed runs) showed non-overlapping
+  TTFT confidence intervals, but which strategy came out faster flipped
+  depending on run order — a run-order confound (GPU/cache state drifting
+  between the two runs), not a real strategy effect. `bench/ab_interleaved.py`
+  fixes this by alternating strategies per request in one continuous,
+  randomized-order sequence (the gateway now picks a strategy per request
+  via `x-kvroute-strategy` rather than fixing one at startup). Run against a
+  real backend: at n=30 the result flipped between two consecutive runs
+  (first favored prefix_aware, then favored round_robin, both with
+  non-overlapping CIs) — itself a sign of noise at that sample size. At
+  n=60, the CIs overlap heavily and the means are nearly identical (1.28s
+  vs. 1.30s): **no statistically significant TTFT difference between the two
+  strategies** on this workload (a 1.5B model, two backends, shared-prefix
+  traffic) once the confound is controlled for. The apparent "prefix_aware
+  wins" from the first, uncontrolled test was not real.
 - **Stress test** (three load profiles run as concurrent processes, 60
   req/s combined): 2630 requests sent, 466 admitted, 2164 shed by admission
   control. The gateway stayed healthy and responsive throughout — the
